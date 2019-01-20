@@ -1,31 +1,27 @@
 import 'package:flutter/material.dart';
+import './app_screens/first_screen.dart';
 
-void main() {
-  runApp(
-    MaterialApp(
-      title: "My Flutter App",
-      home:Scaffold(//allowing to app bar on the top of the screen
-        appBar: AppBar(title: Text("HOME"),),
-        body: Material(
-          color: Colors.lightBlue,
-          child:
-          Center(child:Text(
-            "hello world",
-            textAlign: TextAlign.center,
-            textDirection: TextDirection.ltr,
-            style: TextStyle(color: Colors.white,fontSize: 40.0,
-                fontStyle: FontStyle.italic),
+/*=> function expression insteaded of {}
+void main()
+{
+  runApp(new MyFlutterDemo());
+}*/
+void main() => runApp(new MyFlutterDemo());
+
+class MyFlutterDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+        //to remove the debug badge in the top
+        debugShowCheckedModeBanner: false,
+        title: "My Flutter App",
+        home: Scaffold(
+          //allowing to app bar on the top of the screen
+          appBar: AppBar(title: Text("HOME"),
           ),
-          ),
-        ),
-
-      )
-
-    )
-
-
-  );
-
-
-
+          body: new FiestScreen()
+        )
+    );
+  }
 }
